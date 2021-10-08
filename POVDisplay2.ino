@@ -1,9 +1,3 @@
-/**
-	POVDisplay2
-	Persistence of vision display using an ESP32 module and 595 shift registers
-	Andrew Sealing
-*/
-
 #include <WiFi.h>
 #include "Constants.h"
 #include "Display.h"

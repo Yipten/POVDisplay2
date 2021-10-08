@@ -2,21 +2,17 @@
 
 void LEDs::enable() {
   //  digitalWrite(OE, LOW);
+
   REG_WRITE(GPIO_OUT_REG, 0 << OE);
 }
 
 void LEDs::disable() {
-  //  PORTD |= 1 << OE;
-
   //  digitalWrite(OE, HIGH);
 
   REG_WRITE(GPIO_OUT_REG, 1 << OE);
 }
 
 void LEDs::clear() {
-  //  PORTD &= ~(1 << SRCLR);
-  //  PORTD |= 1 << SRCLR;
-
   //  digitalWrite(SRCLR, LOW);
   //  digitalWrite(SRCLR, HIGH);
 
@@ -25,10 +21,6 @@ void LEDs::clear() {
 }
 
 void LEDs::shiftBit(uint8_t b) {
-  //  PORTD |= b << SER;
-  //  PORTD |= 1 << SRCLK;
-  //  PORTD &= ~(1 << SER | 1 << SRCLK);
-
   //  digitalWrite(SER, b);
   //  digitalWrite(SRCLK, HIGH);
   //  digitalWrite(SRCLK, LOW);
@@ -41,9 +33,6 @@ void LEDs::shiftBit(uint8_t b) {
 }
 
 void LEDs::show() {
-  //  PORTD |= 1 << RCLK;
-  //  PORTD &= ~(1 << RCLK);
-
   //  digitalWrite(RCLK, HIGH);
   //  digitalWrite(RCLK, LOW);
 
