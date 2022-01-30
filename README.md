@@ -31,7 +31,7 @@ All of the electronic components were soldered together on two solderable PCBs s
 
 Once all of the hardware was assembled, it looked like this: 
 
-<!-- TODO: add static image -->
+![complete assembly](images/complete_assembly.jpg)
 
 ## Use
 
@@ -41,7 +41,7 @@ The output of the display is changed by changing the array `Display::grid` when 
 
 For example, to draw a 20-by-30 filled-in rectangle centered on the origin, the `draw()` method would look like this: 
 
-```c
+```cpp
 void draw() {
     Display::clear();
     Display::fillRect(-10, -15, 20, 30);
