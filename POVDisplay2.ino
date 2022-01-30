@@ -14,10 +14,7 @@ void draw() {
   // clear grid just to be safe
   Display::clear();
 
-  Display::drawLine(-15, -20, 10, 10);
-  Display::drawLine(0, 0, 10, 10);
-  Display::drawLine(-25, 5, 20, 15);
-  //  Display::drawLine(0, 0, 7, 28);
+  // add function calls here to modify the display output
 }
 
 void breakLoop() {

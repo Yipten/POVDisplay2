@@ -35,6 +35,21 @@ Once all of the hardware was assembled, it looked like this:
 
 ## Use
 
+### Changing displayed image
+
+The output of the display is changed by changing the array `Display::grid` when the program starts by calling functions that modify it in the `draw()` function. All of the drawing functions are fully working except for `Display::drawLine` which is incomplete. These drawing functions work by figuring out the Cartesian coordinates of the required points, and then calling `Display::addPoint()` for each, which converts them from Cartesian to polar coordinates and sets the corresponding element in `Display::grid` to `1`. The origin is the center of the display, and Quadrant I (where x and y are both positive) is on the bottom-right. 
+
+For example, to draw a 20-by-30 filled-in rectangle centered on the origin, the `draw()` method would look like this: 
+
+```c
+void draw() {
+    Display::clear();
+    Display::fillRect(-10, -15, 20, 30);
+}
+```
+
+### Making it go
+
 ## How does it work? 
 
 
