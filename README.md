@@ -4,7 +4,11 @@
 
 This is the code for the second, more advanced version of my previous [POVDisplay](https://github.com/Yipten/POVDisplay) project. Instead of having five LEDs that display text around the edge of the circle, this version has 31 LEDs that span from the center to the edge, allowing for images to be drawn anywhere within the entire circle. Since the 2MHz clock speed of an Arduino Nano wouldn't be fast enough to handle this, an ESP32 with a 240MHz clock speed was used instead. This board also has Wi-Fi and Bluetooth capabilities, which will allow for the possibility of adding wireless controls in the future. 
 
-<!-- TODO: add GIF image -->
+![POV display showing a small filled-in square](images/POVDisplay2Square.gif)
+
+![POV display showing three different outlined rectangles](images/POVDisplay2Rects.gif)
+
+*The video framerate makes it look worse than it does in real life.*
 
 ## Hardware
 
@@ -49,6 +53,11 @@ void draw() {
 ```
 
 ### Making it go
+
+To run the display: 
+- Upload the program to the ESP32
+- Power on the battery pack
+- Turn on the fan motor
 
 ## How does it work? 
 
