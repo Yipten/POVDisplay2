@@ -2,11 +2,11 @@
 
 ## What is it? 
 
-This is the code for the second, more advanced version of my previous [POVDisplay](https://github.com/Yipten/POVDisplay) project. Instead of having five LEDs that display text around the edge of the circle, this version has 31 LEDs that span from the center to the edge, allowing for images to be drawn anywhere within the entire circle. Since the 2MHz clock speed of an Arduino Nano wouldn't be fast enough to handle this, an ESP32 with a 240MHz clock speed was used instead. This board also has Wi-Fi and Bluetooth capabilities, which will allow for the possibility of adding wireless controls in the future. 
+This is the code for the second, more advanced version of my previous [POVDisplay](https://github.com/Yipten/POVDisplay) project. Instead of having five LEDs that display text around the edge of the circle, this version has 31 LEDs that span from the center to the edge, allowing for images to be drawn anywhere within the entire circle. Since the 2MHz clock speed of an Arduino Nano wouldn't have been fast enough to handle this, an ESP32 with a 240MHz clock speed was used instead. This board also has Wi-Fi and Bluetooth capabilities, which will allow for the possibility of adding wireless controls in the future. 
 
 ![POV display showing a small filled-in square](images/POVDisplay2Square.gif)
 
-![POV display showing three different outlined rectangles](images/POVDisplay2Rects.gif)
+![POV display showing four different outlined rectangles](images/POVDisplay2Rects.gif)
 
 *The video framerate makes it look worse than it does in real life.*
 
@@ -14,7 +14,6 @@ This is the code for the second, more advanced version of my previous [POVDispla
 
 ### Wiring
 
-<!-- TODO: explain how shift registers were daisy-chained together -->
 Connections to the ESP32 microcontroller: 
 
 | ESP32 pin | Connection         |
@@ -27,11 +26,11 @@ Connections to the ESP32 microcontroller:
 | 32        | SR SRCLR           |
 | 34        | hall effect sensor |
 
-*SR = shift register*
+Four 8-bit shift registers (abbreviated as SR in the table above) were daisy-chained together for controlling all 31 LEDs at once, since there aren't that many pins on the ESP32. All of the shift register input pins were connected in parallel, except for the serial input (SER), which was set up to pass the last bit of one shift register to the next. This setup created the effect of having one big 32-bit shift register. Each LED was connected to one of the shift register output pins, allowing them to be individually addressable. 
 
 ### Assembly
 
-All of the electronic components were soldered together on two solderable PCBs stacked on top of each other. The bottom PCB had the ESP32 and shift registers, and the top one had the LEDs. 
+All of the electronic components were soldered together on two solderable PCBs stacked on top of each other using plastic spacers. The bottom PCB had the ESP32 and shift registers, and the top one had the LEDs. The PCBs were screwed onto the board of 1/8 inch MDF, and the battery pack was mounted with a couple of velcro straps. 
 
 Once all of the hardware was assembled, it looked like this: 
 
@@ -60,6 +59,8 @@ To run the display:
 - Turn on the fan motor
 
 ## How does it work? 
+
+<!-- TODO: write this section -->
 
 
 <!-- old README text: 
