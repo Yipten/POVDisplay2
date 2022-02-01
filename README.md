@@ -60,16 +60,7 @@ To run the display:
 
 ## How does it work? 
 
-<!-- TODO: write this section -->
+This POV Display works in mostly the same way as my previous one. A 2-dimensional array represents which LEDs should be turned on and where, and the timing is managed using a hall effect sensor and timestamps. The only major difference is that the sensor causes an interrupt which causes the program to skip ahead to the beginning of the next iteration of the main loop. This change was necessary to allow "drawing" to occur throughout the entire circle instead of relying on a buffer like before. 
 
+Also, as mentioned before, shift registers were used to drive the LEDs instead of directly using the microcontroller's output pins. In the innermost `for` loop, bits were shifted in one at a time, and then moved in parallel to the storage register to cause visual changes to happen all at once. 
 
-<!-- old README text: 
-Code for my second persistence of vision display built from scratch. 
-
-Features
-* There are now 31 LEDs spanning from center to edge, creating a fully filled-in circular display area. 
-* Since that's a lot of LEDs, four daisy-chained shift registers are used to drive each one individually. 
-* I ran some basic custom-made benchmark tests to see what microcontroller would be best for driving the shift registers in order to update all of the LEDs 720 times per revolution (very speedy requirement!). I ended up going with the ESP32 Dev Module which has a top CPU frequency of 240MHz (an Arduino Nano is only 2MHz). It also has Wi-Fi and Bluetooth capabilities which will allow for some fancy expansions in the future. 
-
-Functions called in "draw()" determine what will be displayed. The two rectangle functions work fine, but the one for drawing lines is currently unfinished. 
--->
