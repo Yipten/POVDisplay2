@@ -8,6 +8,8 @@ This is the code for the second, more advanced version of my previous [POVDispla
 
 ![POV display showing four different outlined rectangles](images/POVDisplay2Rects.gif)
 
+![POV display showing three straight lines at different angles](images/POVDisplay2Lines.gif)
+
 *The video framerate makes it look worse than it does in real life.*
 
 ## Hardware
